@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النتائج - رياضيات الثاني الإعدادي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-blue-600 p-4 shadow-md">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-white text-2xl font-bold">Math Hub Academy</a>
+            <div class="space-x-4">
+                <a href="lessons.html" class="text-white hover:text-blue-200"><i class="fas fa-book mr-1"></i> الدروس</a>
+                <a href="exercises.html" class="text-white hover:text-blue-200"><i class="fas fa-pen mr-1"></i> التمارين</a>
+                <a href="quiz.html" class="text-white hover:text-blue-200"><i class="fas fa-question-circle mr-1"></i> الاختبار</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-8 text-center text-blue-600">نتيجة الاختبار</h1>
+        
+        <div class="result-container bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+            <div class="result-summary text-center mb-10">
+                <div class="w-40 h-40 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-5xl font-bold text-blue-600 animate-bounce" id="score">0</span>
+                    <span class="text-2xl">/5</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-4 mb-4">
+                    <div id="score-bar" class="bg-blue-600 h-4 rounded-full transition-all duration-1000" style="width: 0%"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2" id="result-title">...</h2>
+                <p class="text-lg text-gray-700" id="result-message">...</p>
+            </div>
+
+            <div class="detailed-results mb-10">
+                <h3 class="text-xl font-bold mb-6 text-center border-b pb-2">تفاصيل الإجابات</h3>
+                
+                <div class="question-result mb-4 p-4 rounded-lg border" id="q1-result">
+                    <p class="font-bold text-lg">1. ما حل المعادلة: 2س + 5 = 15؟</p>
+                    <p class="text-gray-800 mb-1">إجابتك: <span class="user-answer"></span></p>
+                    <p class="text-green-600 font-medium correct-answer"></p>
+                </div>
+                
+                <div class="question-result mb-4 p-4 rounded-lg border" id="q2-result">
+                    <p class="font-bold text-lg">2. ما مساحة المثلث الذي طول قاعدته 6 سم وارتفاعه 4 سم؟</p>
+                    <p class="text-gray-800 mb-1">إجابتك: <span class="user-answer"></span></p>
+                    <p class="text-green-600 font-medium correct-answer"></p>
+                </div>
+                
+                <div class="question-result mb-4 p-4 rounded-lg border" id="q3-result">
+                    <p class="font-bold text-lg">3. إذا كان المتوسط الحسابي للأعداد 5، 7، 9، 11 هو:</p>
+                    <p class="text-gray-800 mb-1">إجابتك: <span class="user-answer"></span></p>
+                    <p class="text-green-600 font-medium correct-answer"></p>
+                </div>
+                
+                <div class="question-result mb-4 p-4 rounded-lg border" id="q4-result">
+                    <p class="font-bold text-lg">4. ما طول الوتر في المثلث القائم الذي طولا ضلعيه القائمين 3 سم و 4 سم؟</p>
+                    <p class="text-gray-800 mb-1">إجابتك: <span class="user-answer"></span></p>
+                    <p class="text-green-600 font-medium correct-answer"></p>
+                </div>
+                
+                <div class="question-result mb-4 p-4 rounded-lg border" id="q5-result">
+                    <p class="font-bold text-lg">5. أي من الأعداد التالية هو عدد أولي؟</p>
+                    <p class="text-gray-800 mb-1">إجابتك: <span class="user-answer"></span></p>
+                    <p class="text-green-600 font-medium correct-answer"></p>
+                </div>
+            </div>
+
+            <div class="recommendations bg-blue-50 p-6 rounded-lg border border-blue-200">
+                <h3 class="text-xl font-bold mb-4 text-center border-b pb-2">التوصيات الدراسية</h3>
+                <div id="rec-algebra" class="hidden p-4 mb-3 rounded-lg bg-white">
+                    <p class="font-bold text-blue-700">✏️ الجبر:</p>
+                    <p class="text-gray-700">نوصي بمراجعة دروس الجبر الأساسية في قسم الدروس</p>
+                </div>
+                <div id="rec-geometry" class="hidden p-4 mb-3 rounded-lg bg-white">
+                    <p class="font-bold text-blue-700">📐 الهندسة:</p>
+                    <p class="text-gray-700">نوصي بمراجعة دروس الأشكال الهندسية في قسم الدروس</p>
+                </div>
+                <div id="rec-stats" class="hidden p-4 mb-3 rounded-lg bg-white">
+                    <p class="font-bold text-blue-700">📊 الإحصاء:</p>
+                    <p class="text-gray-700">نوصي بمراجعة دروس الإحصاء الأساسية في قسم الدروس</p>
+                </div>
+                <div id="rec-numbers" class="hidden p-4 mb-3 rounded-lg bg-white">
+                    <p class="font-bold text-blue-700">🔢 الأعداد:</p>
+                    <p class="text-gray-700">نوصي بمراجعة دروس الأعداد والأعداد الأولية في قسم الدروس</p>
+                </div>
+            </div>
+
+            <div class="actions flex justify-center mt-8 space-x-4">
+                <a href="quiz.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">
+                    إعادة الاختبار
+                </a>
+                <a href="lessons.html" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">
+                    مراجعة الدروس
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>© 2023 منصة تعليم الرياضيات - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
